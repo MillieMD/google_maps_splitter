@@ -1,7 +1,24 @@
+import re
+
+def url_check(url : str):
+
+    """ Check the vital parts are in the string """
+
+    # Bare Minimum:
+    regex = "https:\/\/www\.google\.co\.uk\/maps\/@-?[0-9]?[0-9].[0-9]{7},-?[0-9]?[0-9].[0-9]{7},3a,75y,[0-9]?[0-9]?[0-9].?[0-9]?[0-9]?h,[0-9]?[0-9]?[0-9].?[0-9]?[0-9]?t"
+
+    return re.search(regex, url)
+
 def url_split(url : str):
 
     """ Split GoogleMaps URL into latitude, longitude, heading and pitch
         Returned as a tuple of strings, in stated order """
+
+    if url_check(url) == None:
+
+        print("Invalid URL - please paste full URL")
+        
+        return None
 
     data = url.split("/")[4].split(",")  # Fourth chunk contains the data we need, seperated by ","  
 
@@ -28,10 +45,12 @@ while True:
 
     result = url_split(user_input)
 
-    print("Latitude:", result[0])
-    print("Longitude:", result[1])
-    print("Heading:", result[2])
-    print("Pitch:", result[3])
+    if result != None:
+        
+        print("Latitude:", result[0])
+        print("Longitude:", result[1])
+        print("Heading:", result[2])
+        print("Pitch:", result[3])
 
     
     
