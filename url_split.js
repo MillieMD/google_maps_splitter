@@ -31,7 +31,7 @@ function data_extract(e){
 
 	let url = String(e.target.value);
 	
-	if (url.match(regex) === null) {
+	if (url_check(url)) {
 		output.style.display = "none"
 		error.style.display = "inline";
 		
