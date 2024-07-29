@@ -8,6 +8,7 @@
 	--clr-warning: #f76d54;
 	
 	--rad-large: 16px;
+	--rad-small: 4px;
 	
 	
 }
@@ -35,7 +36,7 @@ input[type = "text"]{
 	background-color: var(--clr-bg-grey);
 	color: inherit;
 	
-	padding: 1rem;
+	padding: 0.5rem;
 
 }
 
@@ -51,11 +52,44 @@ input:active{
 	
 }
 
+.output-line{
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	gap: 0.5rem;
+	
+}
+
 .error-message{
 	
 	display: none;
 	
 	padding: 1 rem;
 	color: var(--clr-warning);
+	
+}
+
+.invis-button{
+	
+	border-radius: var(--rad-small);
+	
+	border: none;
+	background-color: var(--clr-bg-black);	
+	
+	color: var(--clr-white);
+	
+	padding: 1rem;
+}
+
+.invis-button:hover{
+
+	background-color: var(--clr-bg-grey);	
+}
+
+.fa-solid{
+	
+	color: var(--clr-white);
 	
 }
