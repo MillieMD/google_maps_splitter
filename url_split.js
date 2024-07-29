@@ -1,15 +1,12 @@
-const regex = /https:\/\/www\.google\.co\.uk\/maps\/@?-?[0-9]?[0-9].?[0-9]*,-?[0-9]?[0-9].?[0-9]*,3a,75y,[0-3]?[0-9]?[0-9].?[0-9]*h,[0-3]?[0-9]?[0-9].?[0-9]*t/g
-
 function url_test(url){
 
-	return url.match(/https:\/\/www\.google\.co\.uk\/maps\//g) && url.match(/@?-?[0-9]?[0-9].?[0-9]*,-?[0-9]?[0-9].?[0-9]*,3a,75y,[0-3]?[0-9]?[0-9].?[0-9]*h,[0-3]?[0-9]?[0-9].?[0-9]*t/g)
-
-	
+	console.log(url.match(/@?-?[0-9]?[0-9].?[0-9]*,-?[0-9]?[0-9].?[0-9]*,3a,75y,[0-3]?[0-9]?[0-9].?[0-9]*h,[0-3]?[0-9]?[0-9].?[0-9]*t/g));
+	return url.match(/@?-?[0-9]?[0-9].?[0-9]*,-?[0-9]?[0-9].?[0-9]*,3a,75y,[0-3]?[0-9]?[0-9].?[0-9]*h,[0-3]?[0-9]?[0-9].?[0-9]*t/g)
 }
 
 function url_split(url){
 	
-	let data = url.split("/")[4];
+	let data = url.match(/@?-?[0-9]?[0-9].?[0-9]*,-?[0-9]?[0-9].?[0-9]*,3a,75y,[0-3]?[0-9]?[0-9].?[0-9]*h,[0-3]?[0-9]?[0-9].?[0-9]*t/g)[0]
 	data = data.split(",");
 	
 	let lat = data[0].slice(1);
@@ -30,8 +27,8 @@ function data_extract(e){
 		// Split and display
 
 	let url = String(e.target.value);
-	
-	if (url_check(url)) {
+
+	if (url_test(url) == null) {
 		output.style.display = "none"
 		error.style.display = "inline";
 		
