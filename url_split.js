@@ -38,10 +38,10 @@ function data_extract(e){
 	
 	let data = url_split(url);
 	
-	lat_span.textContent = "Latitude: " + data[0];
-	long_span.textContent = "Longitude: " + data[1];
-	head_span.textContent = "Heading: " + data[2];
-	pitch_span.textContent = "Pitch: " + data[3]
+	lat_span.value = data[0];
+	long_span.value = data[1];
+	head_span.value =  data[2];
+	pitch_span.value = data[3]
 
 	output.style.display = "inline";
 	error.style.display = "none";
