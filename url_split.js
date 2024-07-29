@@ -1,5 +1,12 @@
 const regex = /https:\/\/www\.google\.co\.uk\/maps\/@?-?[0-9]?[0-9].?[0-9]*,-?[0-9]?[0-9].?[0-9]*,3a,75y,[0-3]?[0-9]?[0-9].?[0-9]*h,[0-3]?[0-9]?[0-9].?[0-9]*t/g
 
+function url_test(url){
+
+	return url.match(/https:\/\/www\.google\.co\.uk\/maps\//g) && url.match(/@?-?[0-9]?[0-9].?[0-9]*,-?[0-9]?[0-9].?[0-9]*,3a,75y,[0-3]?[0-9]?[0-9].?[0-9]*h,[0-3]?[0-9]?[0-9].?[0-9]*t/g)
+
+	
+}
+
 function url_split(url){
 	
 	let data = url.split("/")[4];
