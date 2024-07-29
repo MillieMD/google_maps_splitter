@@ -27,10 +27,10 @@
 
 		<div id = "output"> 
 
-			<p id = "lat"> Latitude: </p>
-			<p id = "long"> Longitude:  </p>
-			<p id = "head"> Heading: </p>
-			<p id = "pitch"> Pitch: </p>
+			<div id = "lat-container" class = "output-line"> Latitude: <input type = "text" id = "lat"> </p> <button class = "invis-button" id = "copy-lat"> <i class="fa-solid fa-copy"></i> </button> </div>
+			<div id = "long-container" class = "output-line"> Longitude: <input type = "text" id = "long">  </p>  <button class = "invis-button" id = "copy-long">  <i class="fa-solid fa-copy"></i> </button> </div>
+			<div id = "heading-container" class = "output-line">  Heading <input type = "text" id = "head"> </p>  <button class = "invis-button" id = "copy-head"> <i class="fa-solid fa-copy"></i> </button> </div>
+			<div id = "pitch-container" class = "output-line"> Pitch: <input type = "text" id = "pitch">  </p>  <button class = "invis-button" id = "copy-pitch"> <i class="fa-solid fa-copy"></i> </button> </div>
 
 		</div>
 
@@ -53,7 +53,37 @@
 	const pitch_span = document.getElementById("pitch");
 
 	document.getElementById("urlinput").addEventListener("change", data_extract);
+	
+	document.getElementById("copy-lat").addEventListener("click", (event) => {
+	
+		lat_span.select()
+		navigator.clipboard.writeText(lat_span.value);  
+		
+	});
+	
+	document.getElementById("copy-long").addEventListener("click", (event) => {
+	
+		long_span.select()
+		navigator.clipboard.writeText(long_span.value);  
+		
+	});
+	
+	document.getElementById("copy-head").addEventListener("click", (event) => {
+	
+		head_span.select()
+		navigator.clipboard.writeText(head_span.value);  
+		
+	});
+	
+	document.getElementById("copy-pitch").addEventListener("click", (event) => {
+	
+		pitch_span.select() 
+		navigator.clipboard.writeText(pitch_span.value);  
+		
+	});
 
 </script>
+
+<script src="https://kit.fontawesome.com/d90c26d2f3.js" crossorigin="anonymous"></script>
 
 </html>
