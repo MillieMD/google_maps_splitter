@@ -1,0 +1,66 @@
+:root{
+	
+	--clr-white: #f3f3f3;
+	
+	--clr-bg-black: #3e3e3e;
+	--clr-bg-grey: #5e5e5e;
+	
+	--clr-warning: #f76d54;
+	
+	--rad-large: 16px;
+	--rad-small: 4px;
+	
+	
+}
+
+
+body{
+	
+	background-color: var(--clr-bg-black);
+	color: var(--clr-white);
+	
+	font-family: "Roboto";
+	
+	display:grid;
+	justify-content: center;
+	align-items: center;
+	
+	text-align:center;
+}
+
+input[type = "text"]{
+
+	border-radius: var(--rad-large);
+	border: 2px dotted var(--clr-white);
+	
+	background-color: var(--clr-bg-grey);
+	color: inherit;
+	
+	padding: 1rem;
+
+}
+
+input:active{
+
+	border: 2px solid red;
+
+}
+
+#output{
+	
+	display: none;
+	
+}
+
+.error-message{
+	
+	display: none;
+	
+	border: 2px solid;
+	border-radius: var(--rad-small);
+	
+	padding: 1 rem;
+	
+	color: var(--clr-warning);
+	
+}
