@@ -8,7 +8,6 @@
 	--clr-warning: #f76d54;
 	
 	--rad-large: 16px;
-	--rad-small: 4px;
 	
 	
 }
@@ -57,8 +56,6 @@ input:active{
 	display: none;
 	
 	border: 2px solid;
-	border-radius: var(--rad-small);
-	
 	padding: 1 rem;
 	
 	color: var(--clr-warning);
