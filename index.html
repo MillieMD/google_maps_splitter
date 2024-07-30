@@ -32,6 +32,8 @@
 			<div id = "heading-container" class = "output-line">  Heading <input type = "text" id = "head"> </p>  <button class = "invis-button" id = "copy-head"> <i class="fa-solid fa-copy"></i> </button> </div>
 			<div id = "pitch-container" class = "output-line"> Pitch: <input type = "text" id = "pitch">  </p>  <button class = "invis-button" id = "copy-pitch"> <i class="fa-solid fa-copy"></i> </button> </div>
 
+			<button class = "invis-button" id = "copy-excel"> <i class="fas fa-file-excel"></i> Copy for Excel </button>
+
 		</div>
 
 		<span class = "error-message" id = "error"> Invalid URL </span>
@@ -81,6 +83,14 @@
 		navigator.clipboard.writeText(pitch_span.value);  
 		
 	});
+
+	document.getElementById("copy-excel").addEventListener("click", (event) => {
+	
+		pitch_span.select() 
+		navigator.clipboard.writeText(lat_span.value + "\t" + long_span.value + "\t" + head_span.value + "\t" + pitch_span.value);  
+		
+	});
+
 
 </script>
 
